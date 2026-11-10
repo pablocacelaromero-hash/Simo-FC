@@ -12,13 +12,22 @@
  "results": {},
  "players": [
   {
-   "name": "Darío",
-   "number": 4,
-   "pos": "Defensa",
-   "quote": "",
-   "img": "",
-   "goles":0
+    "name": "Lucas",
+    "number": 1,
+    "pos": "Portero",
+    "quote": "",
+    "img": "",
+    "goles": 0
   },
+  {
+    "name": "Darío",
+    "number": 4,
+    "pos": "Defensa",
+    "goles": 0
+    
+  },
+
+ 
   {
    "name": "Richi",
    "number": 5,
