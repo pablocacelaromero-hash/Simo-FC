@@ -71,7 +71,7 @@ function renderSquad() {
         ${p.img ? `<img src="${p.img}" alt="${esc(p.name)}" class="ph w-full h-full object-cover">` : `<svg class="ph w-full h-full" viewBox="0 0 100 125" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><circle cx="50" cy="52" r="17" fill="var(--line)"/><path d="M12 125c0-30 16-47 38-47s38 17 38 47z" fill="var(--line)"/></svg>`}
         ${p.number !== "" && p.number != null ? `<span class="absolute top-3 left-3 font-head font-extrabold text-2xl w-11 h-11 grid place-items-center rounded-full" style="background:var(--card);color:var(--red)">${p.number}</span>` : ""}
       </div>
-      <div class="p-4"><h3 class="font-bold leading-tight">${esc(p.name)}</h3>${p.pos ? `<p class="text-sm text-muted">${esc(p.pos)} • <span class="text-red font-semibold">${p.goals || 0} goles</span></p>` : ""}
+      <div class="p-4"><h3 class="font-bold leading-tight">${esc(p.name)}</h3>${p.pos ? `<p class="text-sm text-muted">${esc(p.pos)} • <span class="text-red font-semibold">${p.goles || 0} goles</span></p>` : ""}
       ${p.quote ? `<div class="rule my-3" style="width:24px"></div><p class="text-sm italic text-muted">“${esc(p.quote)}”</p>` : ""}</div></article>`).join("") + `</div>`);
 }
 
