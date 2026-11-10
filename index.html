@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CD Estrella de Simo</title>
+<link rel="icon" href="crest.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>
+tailwind.config = { theme: { extend: {
+  colors: { bg:'var(--bg)', card:'var(--card)', ink:'var(--ink)', muted:'var(--muted)', line:'var(--line)', sand:'var(--sand)', red:'var(--red)' },
+  fontFamily: { sans:['Inter','system-ui','sans-serif'], head:['Sora','Inter','system-ui','sans-serif'] }
+}}};
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash">
+  <div class="shield" id="splashShield"></div>
+  <p class="name text-sm mt-6" style="color:#fff">Fútbol 7 · Triana Los Remedios</p>
+</div>
+
+<header class="sticky top-0 z-50 border-b border-line" style="background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);top:env(safe-area-inset-top,0px)">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-3">
+    <a href="#inicio" class="flex items-center gap-2 shrink-0"><span id="logoSm" class="w-9 h-9 block"></span><span class="font-head font-bold hidden sm:block">Estrella de Simo</span></a>
+    <nav id="nav" class="scroll-x flex gap-1 ml-auto"></nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-8 pb-20">
+  <section id="inicio" class="view"></section>
+  <section id="plantilla" class="view"></section>
+  <section id="calendario" class="view"></section>
+  <section id="equipaciones" class="view"></section>
+  <section id="estadisticas" class="view"></section>
+  <section id="palmares" class="view"></section>
+</main>
+
+<footer class="border-t border-line py-8 text-center text-sm text-muted">
+  <p>CD Estrella de Simo, temporada 2026/27</p>
+  <!-- REDES: pon aquí tus enlaces reales -->
+  <p class="mt-2 flex justify-center gap-4"><a class="hover:text-red" href="#" id="lnkIg">Instagram</a><a class="hover:text-red" href="#" id="lnkWa">WhatsApp</a></p>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

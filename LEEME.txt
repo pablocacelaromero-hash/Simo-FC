@@ -1,0 +1,22 @@
+CD ESTRELLA DE SIMO: cómo actualizar la web
+
+Todo lo que cambia está en data.json. No hace falta tocar el resto.
+
+1) RESULTADOS: en "results", una línea por partido jugado.
+   Formato:  "jornada LOCAL-VISITANTE": [goles local, goles visitante]
+   Siglas: NAG CHU COT EST SIE FUM TRI ALC GUE RES
+   Ejemplo:  "results": { "1 ALC-EST": [2, 3], "2 EST-GUE": [1, 1] }
+   La clasificación, el último resultado y el próximo partido se recalculan solos.
+   Si metes también los resultados de otros equipos del grupo, la tabla es completa.
+
+2) JUGADORES: en "players". Campos: name, number, pos (posición), quote (frase), img (foto).
+   Fotos: guarda el archivo junto a index.html y escribe su nombre, por ejemplo "img": "tete.jpg".
+   La web los ordena sola por dorsal.
+
+3) REDES: en "social", cambia "#" por el enlace de Instagram y de WhatsApp.
+
+4) PALMARÉS: en "honours".
+
+IMPORTANTE: respeta las comas y las comillas del JSON. Si algo falla, pega el archivo en jsonlint.com.
+Para verla en tu ordenador, no abras index.html con doble clic (el navegador bloquea data.json).
+Usa un servidor local (python3 -m http.server) o sube la carpeta a GitHub Pages o Vercel.
