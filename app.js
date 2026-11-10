@@ -92,28 +92,21 @@ function renderCalendar() {
 }
 
 function renderKits() {
-  const ghost = `<svg viewBox="0 0 300 300" class="w-48 h-48" aria-hidden="true"><path d="M105 22 60 38 12 118l38 22 22-32v172q78 10 156 0V108l22 32 38-22-48-80-45-16q-45 36-90 0z" fill="none" stroke="var(--muted)" stroke-width="2.5" stroke-dasharray="7 6"/></svg>`;
-  const shirt = `<svg viewBox="0 0 300 300" class="w-56 h-56 drop-shadow-lg" role="img" aria-label="Primera equipación: camiseta roja con mangas blancas">
-    <defs><linearGradient id="sh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".16"/></linearGradient>
-    <clipPath id="rc"><circle cx="150" cy="188" r="44"/></clipPath></defs>
-    <path d="M105 22 60 38 12 118l38 22 22-32v172q78 10 156 0V108l22 32 38-22-48-80-45-16q-45 36-90 0z" fill="#fbfaf7" stroke="#d8cdb8" stroke-width="1.2" stroke-linejoin="round"/>
-    <path d="M105 22q45 36 90 0l33 86v172q-78 10-156 0V108z" fill="#c4121f"/>
-    <path d="M105 22 72 108M195 22l33 86" stroke="#9c0d18" stroke-width="1" fill="none"/>
-    <path d="M105 22q45 36 90 0" fill="none" stroke="#8f0c16" stroke-width="4" stroke-linecap="round"/>
-    <path d="M60 38 12 118l38 22 22-32zM240 38l48 80-38 22-22-32z" fill="url(#sh)"/>
-    <path d="M72 108v172q78 10 156 0V108L195 22q-45 36-90 0z" fill="url(#sh)"/>
-    <image href="${CREST}" x="178" y="62" width="27" height="40" preserveAspectRatio="xMidYMid meet"/>
-    <circle cx="150" cy="188" r="44" fill="#f4f1ec"/>
-    <g clip-path="url(#rc)"><path d="M100 176q25-14 50-6t50 4v70H100z" fill="#e8402c"/></g>
-    <circle cx="150" cy="188" r="44" fill="none" stroke="#b79b7d" stroke-width="3.5"/>
-    <path d="M150 140l5.5 13.5 14 .8-11 9 4 14-12.5-8-12.5 8 4-14-11-9 14-.8z" fill="#a98a69" transform="translate(0 -1)"/>
-    <text x="150" y="186" text-anchor="middle" font-family="Sora,Inter,sans-serif" font-weight="700" font-size="11.5" fill="#fff">ESTRELLA</text>
-    <text x="150" y="199" text-anchor="middle" font-family="Sora,Inter,sans-serif" font-weight="700" font-size="11.5" fill="#fff">DEL SUR</text>
-    <text x="150" y="212" text-anchor="middle" font-family="Sora,Inter,sans-serif" font-weight="600" font-size="7" fill="#d9b99a">1959</text></svg>`;
-  $("#equipaciones").innerHTML = head("Equipaciones", "Los colores con los que salimos al campo.") + `<div class="grid sm:grid-cols-2 gap-4">` +
-    [["Primera equipación", shirt, "Roja y blanca", "Camiseta roja con mangas blancas, escudo en el pecho y patrocinador Estrella del Sur.", true], ["Segunda equipación", ghost, "Por definir", "Estamos eligiendo diseño. Pronto te lo contamos.", false]].map(([n, svg, tag, note, red]) => `<article class="card p-6 text-center">
-      <div class="rounded-xl py-8 grid place-items-center" style="background:var(--sand)">${svg}</div>
-      <h3 class="font-bold text-lg mt-4">${n}</h3><span class="tag ${red ? "red" : ""} mt-2 inline-block">${tag}</span><p class="text-sm text-muted mt-3 max-w-xs mx-auto">${note}</p></article>`).join("") + `</div>`;
+  const container = document.getElementById("equipaciones");
+  if (!container) return;
+  
+  container.innerHTML = `
+    <div class="max-w-xl mx-auto p-4 text-center">
+      <h2 class="text-2xl font-bold mb-4 font-head">Equipación Oficial</h2>
+      <p class="text-muted mb-6">Los colores con los que salimos al campo.</p>
+      <div class="bg-card border border-line rounded-2xl p-6 shadow-sm">
+        <img src="equipacion1.jpg" alt="Equipación Triana Simo" class="w-full rounded-xl shadow-md border border-line object-cover">
+        <h3 class="font-bold text-lg mt-4">Primera equipación</h3>
+        <span class="inline-block bg-red/10 text-red text-xs px-3 py-1 rounded-full font-semibold mt-1">Roja y blanca</span>
+        <p class="text-sm text-muted mt-2">Camiseta oficial del equipo.</p>
+      </div>
+    </div>
+  `;
 }
 
 function renderStats() {
